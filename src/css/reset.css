@@ -1,0 +1,10 @@
+* {
+    margin: 0; 
+    padding: 0; /*espaçamento de bordas entre os elementos. Margin,bording, padding nesta sequencia.*/
+    box-sizing: border-box; /*Evita dor de cabeça - trabalha com medidas largura,altura, espaçamento*/
+    /*Este é um arquivo de "reset". Existem vários na internet mas este foi criado na mão!*/
+}
+
+ul {
+    list-style: none; /*tira as bolinas da frente da lista!*/
+}

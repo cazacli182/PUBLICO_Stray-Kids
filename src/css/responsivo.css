@@ -1,0 +1,77 @@
+/*Responsividade é adaptar a mesma página para vários dispositivos - ESTE ARQUIVO ADAPTA O LAYOU PARA CELULARES...*/
+
+/*Uma dica é instalar uma extensão do navegador chrome chamada responsive viewer.. ela mostra o site em diferentes resoluções...*/
+
+@media (max-width: 769px) {  /*a partir de qual tela quero aplicar novos estilos*/
+    /*Coloca os seletores que precisa estilizar*/
+    /*.conteudo .nome-integrante {
+        background-color: red; Esta é uma forma de testar.. quando diminui a tela o nome do integrante fica vermelho.. 
+        Serve para ajudar a ver se funciona...    
+    */
+    main::after { /*SOBRESCREVENDO AQUELE CÓDIGO DO ESTILOS.CSS --> Aquele pseudo-código injetado no html será alterado com o uso deste comando quando o site for aberto em celular: aquele gradiente preto que fica na parte superior esquerda no celular ficará na parte de baixo a esquerda...*/
+        background: linear-gradient(0deg, #000 20%, rgba(0,0,0, 0.00) 65%) no-repeat;
+        width: 100vw; /*sobrescreveu o main::after lá do estilos.css*/
+    }
+
+    main .integrante .imagem {
+        height: 85%;
+    }
+
+    .conteudo {
+        justify-content: flex-end; /*para celulares faz o texto ir pra baixo ao invés de se comportar igual no navegador do pc*/
+        left: 0;
+        top: -20%; /*trouxe o texto um pouco pra cima*/
+        max-width: 100vw;
+        padding: 30px; /*dá uma afastada do conteúdo da borda, traz mais para o centro*/
+    }
+
+    .conteudo .nome-integrante {
+        font-size: 36px;
+    }
+
+    .conteudo .descricao {
+        max-width: 500px;
+    }
+
+    .botoes {
+        flex-direction: row; /*coloca os botões posicionados em linha*/
+        align-items: flex-end; /*empurrou tudo pra baixo*/
+        width: 100%; /*ocupem 100 do tamanho disponível para ocupar*/
+        padding: 30px;
+    }
+
+    .botoes .botao img {
+        max-width: 60px;
+    }
+
+    @media (max-width: 425px) {  /*a partir de qual tela quero aplicar novos estilos*/
+        main .integrante .imagem { /*O main é para ser bem específico, é o elemento que está dentro do main que quero estilizar... por isso alguns tem isso e outros não..*/
+            height: auto; /*a imagem se adequa a largura e altura*/
+        }
+
+        .conteudo .Logo {
+            width:  170px;
+            height: 75px;
+        }
+
+        .conteudo {
+            top: -30%;
+        }
+
+        .conteudo .nome-integrante {
+            font-size: 24px;
+        }
+
+        .botoes {
+            padding: 20px;
+            top: -20%;
+        }
+
+        .botoes .botao img {
+            max-width: 50px;
+        }
+    }    
+ 
+    /*FIM DA SEGUNDA AULA!*/
+
+}

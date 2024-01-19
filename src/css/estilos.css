@@ -1,0 +1,112 @@
+/*Este é um exemplo de comentário em .css, diferente do html que é: <!-- Este é um exemplo de comentário no html! -->*/
+
+  body {
+    background-color: #000000; /*Com a extensão colorhighlight é possível ver esta cor em tempo de desenvolvimento!*/
+    overflow: hidden; /*Tudo que estiver sobrando vai ajusar na tela.. as vezes cria uma barra de rolagem para pouco trecho.. tira isso*/
+  }
+
+  /*Incluir um degradê preto no canto do site*/
+  /*Isso aqui é doido! É como se colocasse um elemento no HTML mas se olhar no código do index ele não existe!
+    Se inspecionar o código fonte da página ai ele existe como ::after!!! É tipo injetar! Pelo css dá para adicionar um
+    elemento no navegador!!!! */
+  main::after {
+    content: "";
+    position: fixed; /*Define que este elemento estará fixo na tela*/
+    top: 0;
+    left: 0;
+    min-height: 100vh; /*vh de heigth*/
+    width: 80vw;       /*vw de width */
+
+    background: linear-gradient(-233deg, #000 40%, rgba(0,0,0,0) 65%) no-repeat; /*Pegar pronto do site www.cssgradient.com*/
+  }
+
+  main .integrante { /*poderia tirar o main que funcionaria igual! é que integrante esta dentro de main no html.*/
+    display: none; /*esconde as imagens dos integrantes que são carregadas.*/
+    height: 100vh; /*vh é unidade de medida - ocupe a altura da tela do dispositivo que a pessoa está acessando!*/
+  }
+
+  main .integrante.selecionado { /*a classe selecionado está junto com a classe integrante, por isso encadeou*/
+      display: block; /*O block é MOSTRAR! O nome engana.*/
+  }
+
+  main .integrante .imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*Ajusta o tamanho da proporção da imagem. Mantém as dimensões sem distorcer!!!*/
+  }
+
+  .conteudo {
+    /* background-color: orange; Ajuda a entender as bordas do html.. executando o site dá pra ver já que estará laranja.. */
+    position: absolute; /*Traz pra frente de algum outro elemento! Fica por cima de outro elemento da página*/
+    top: 0; /*Vai lá pra cima! é como se fosse o OnTop do delphi*/
+    left: 120px; /*Afastou este elemento 120 pixels a partir da borda da esquerda. Trouxe ao meio.*/
+
+    display: flex; /*Altera orientação dos textos*/
+    flex-direction: column; /*Altera a orientção de row para column, um embaixo do outro*/
+    justify-content: center; /*Alinha o texto verticalmente*/
+    min-height: 100vh; /*Altura mínima que quero que o elemento tenha é o total da tela...Vai jogar o texto pro centro do elemento*/
+    max-width: 380px; /*Quero que ele ocupe somente um pedaço de largura*/
+    /*Neste momento comentada a primeira linha do .conteúdo que seta o .orange*/
+
+    z-index: 1; /*Eixo de profundidade. Faz com que este elemento fique por cima de outro elemento com z-index menor, por isso fica por cima da imagem principal do integrante*/
+  }
+
+  .conteudo .nome-integrante {
+    /* background-color: green; Coloca esta cor para achar o elemento na tela e facilitar a programação */
+    color: #ffffff; /*Muda cor do texto para branco*/
+    font-size: 48px;
+    font-family: "Secular One"; /*Fonte importada do Google*/
+    font-weight: 400; /*Deixa fonte mais fininha*/
+    margin-bottom: 20px; /*Adiciona uma margem embaixo do elemento*/
+  }
+
+  .conteudo .descricao {
+    /*background-color: blue; /*Coloca esta cor para achar o elemento na tela e facilitar a programação*/
+    color: #ffffff; /*Muda cor do texto para branco*/
+    font-family: "Rubik"; /*Fonte importada do Google*/
+    line-height: 24px;  /*Altura entre as linhas*/
+  }
+
+  .conteudo .logo {
+    /*background-color: aquamarine;*/
+    background-image: url("../imagens/Logo-Stray-Kids.jpg"); /*No css não é ./ que se utiliza, e sim mais próximo do cmd..sobe 1 nível */
+    /*Obrigatoriamente deve-se dizer altura e largura*/
+    background-size: cover;
+    height: 100px;
+    width: 230px;
+    margin-bottom: 35px;
+  }
+
+  .botoes {
+    position: fixed;
+    top: 0; /*Posiciona os botões pra cima na tela*/
+    right: 0; /*Posiciona os botões do lado direito da tela*/
+    /* background-color: orange; */
+   
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center; /*Alinha os botões verticalmente*/
+    align-items: center;     /*Alinha os botões horizontalmente*/
+    gap: 10px; /*Dá um espaçamento entre os botões */
+    background-color: rgba(0,0,0,0.3); /*Opacidade do quandradão onde os botões estão*/
+  }
+
+  .botoes .botao{
+    border: none;
+    background: #000000;
+    cursor: pointer; /*É a mãozinha que clica no link.. é o ponteiro que muda!*/
+    border-radius: 50%; /*deixa as imagens dos botões redondas ao invés de quadradas*/
+
+  }
+
+  .botoes .botao img{ /*mexe na tag img do button*/
+    border-radius: 50%; /*deixa as imagens dos botões redondas ao invés de quadradas*/
+  }
+
+  .botoes .botao.selecionado { /*só o botão selecionado terá um destaque*/
+    transform: scale(1.2); /*aumenta o botão para deixar ele destacado*/
+    box-shadow: 0 0 10px #D9D9D9; /*Cria uma bordinha bem pequena só que quadrada.. para corrigir usa-se abaixo o próximo comando:*/
+  }
+ 
