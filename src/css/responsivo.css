@@ -41,7 +41,7 @@
     }
 
     .botoes .botao img {
-        max-width: 60px;
+        max-width: 45px;
     }
 
     @media (max-width: 425px) {  /*a partir de qual tela quero aplicar novos estilos*/
